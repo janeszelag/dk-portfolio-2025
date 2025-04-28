@@ -1,4 +1,4 @@
-export default function Contacts() {
+export default function Contact() {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden">
       <video
