@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dakota Arseneault Portfolio",
   description: "Website for Dakota Arseneault, a video editor and motion designer.",
+  icons: {
+    icon: "/images/icon.png",
+    shortcut: "/images/icon.png",
+    apple: "/images/icon.png",
+  },
 }
 
 export default function RootLayout({
