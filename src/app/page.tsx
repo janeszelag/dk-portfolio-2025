@@ -1,10 +1,36 @@
+'use client'
+
+import { useEffect, useState } from "react"
+import { Reel } from "@/components/Reel"
+import { Contact } from "@/components/Contact"
+
 export default function Home() {
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsLoaded(true)
+    }, 2000)
+
+    return () => clearTimeout(timeout)
+  }, [])
+
+
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col relative">
+      {/* Loader Overlay */}
+      {!isLoaded && (
+        <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
+          <span className="relative inline-block w-12 h-12 rotate-45 loader"></span>
+        </div>
+      )}
+
       {/* 1. Full-screen video hero */}
       <section className="relative h-screen w-full overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
           src="/videos/pool-animation.mp4"
           autoPlay
           loop
@@ -14,7 +40,11 @@ export default function Home() {
         />
 
         {/* Top-left name */}
-        <div className="absolute top-0 left-0 p-4 z-10">
+        <div
+          className={`absolute top-0 left-0 p-4 z-10 transition-opacity duration-500 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <div className="flex flex-col">
             <span className="text-neutral-600 text-xl md:text-2xl font-bold">
               DAKOTA ARSENEAULT
@@ -29,26 +59,21 @@ export default function Home() {
         </div>
 
         {/* Center “Coming soon” */}
-        <div className="absolute inset-0 flex items-center justify-center z-10">
+        <div
+          className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-500 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          }`}
+        >
           <h1 className="text-white text-4xl md:text-5xl font-bold">
             COMING SOON......
           </h1>
         </div>
       </section>
 
-      {/* 2. Scrollable content below */}
-      <section className="bg-white py-16 px-4">
-        <h2 className="text-3xl font-semibold mb-4">Contact</h2>
-        <p className="mb-2">Email: dakota@example.com</p>
-        <p>Phone: (123) 456-7890</p>
-        {/* …whatever else you need… */}
-      </section>
+      {/* Scrollable content */}
 
-      {/* 3. More sections as needed */}
-      <section className="bg-gray-100 py-16 px-4">
-        <h2 className="text-3xl font-semibold mb-4">Reel</h2>
-        <p>Stay tuned for the full demo reel!</p>
-      </section>
+      < Reel />
+      <Contact />
     </main>
   )
 }
