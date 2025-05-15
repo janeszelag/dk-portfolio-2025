@@ -1,8 +1,14 @@
+import Image from 'next/image'
+import { PlayButton } from '@/components/PlayButton'
+
+import windowsImage from '../../../public/images/windows-background.webp'
+
 export function Reel() {
+  
   return (
-    <section className="bg-gray-100 py-16 px-4">
-      <h2 className="text-3xl font-semibold mb-4">Reel</h2>
-      <p>Stay tuned for the full demo reel!</p>
+    <section className="bg-gray-300 h-screen w-full overflow-hidden">
+      {/* <PlayButton onClick={() => alert('Play button clicked!')} /> */}
+      <Image src={windowsImage}  alt='' />
     </section>
   )
 }
