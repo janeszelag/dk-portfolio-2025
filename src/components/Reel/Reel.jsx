@@ -1,14 +1,29 @@
+'use client'
+
 import Image from 'next/image'
 import { PlayButton } from '@/components/PlayButton'
 
-import windowsImage from '../../../public/images/windows-background.webp'
+import demoReelStill from '../../../public/images/DK_Demo Reel.webp'
 
 export function Reel() {
   
   return (
-    <section className="bg-gray-300 h-screen w-full overflow-hidden">
-      {/* <PlayButton onClick={() => alert('Play button clicked!')} /> */}
-      <Image src={windowsImage}  alt='' />
-    </section>
+    <section
+      className="relative h-screen w-full overflow-hidden bg-white flex items-center justify-center snap-start snap-always"
+    >
+
+    {/* Background Image */}
+      <Image
+        src={demoReelStill}
+        alt="Demo Reel Still"
+        className="object-cover h-screen w-full z-0"
+      />
+      
+      {/* Play Button */}
+      <div className="absolute z-20 top-120">
+        <PlayButton onClick={() => {alert('ehhlo')}} />
+      </div>
+      </section>
+    
   )
 }

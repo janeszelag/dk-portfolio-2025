@@ -1,11 +1,14 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
+
 import { Reel } from "@/components/Reel"
 import { Contact } from "@/components/Contact"
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
+  const containerRef = useRef(null)
+
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -17,7 +20,10 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col relative">
+    <main
+      className="h-screen overflow-y-scroll snap-y snap-mandatory"
+      style={{ scrollBehavior: 'smooth' }}
+    >
       {/* Loader Overlay */}
       {!isLoaded && (
         <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
@@ -25,45 +31,27 @@ export default function Home() {
         </div>
       )}
 
-      {/* 1. Full-screen video hero */}
-      <section className="relative h-screen w-full overflow-hidden">
+      {/* Swimming pool hero */}
+      <section ref={containerRef} className="h-screen snap-start relative">
         <video
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
+          className="w-full h-full object-cover"
           src="/videos/pool-animation.mp4"
           autoPlay
           loop
           muted
           playsInline
-          preload="auto"
         />
 
-        {/* Top-left name */}
-        <div
-          className={`absolute top-0 left-0 p-4 z-10 transition-opacity duration-500 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div className="flex flex-col">
-            <span className="text-neutral-600 text-xl md:text-2xl font-bold">
-              DAKOTA ARSENEAULT
-            </span>
-            <span className="text-neutral-600 text-base md:text-lg font-bold">
-              VIDEO EDITOR
-            </span>
-            <span className="text-neutral-600 text-base md:text-lg font-bold">
-              MOTION DESIGNER
-            </span>
+
+        <div className="absolute top-0 left-0 p-4 z-30">
+          <div className="flex flex-col text-neutral-600 font-bold">
+            <span className="text-xl md:text-2xl">DAKOTA ARSENEAULT</span>
+            <span className="text-base md:text-lg">VIDEO EDITOR</span>
+            <span className="text-base md:text-lg">MOTION DESIGNER</span>
           </div>
         </div>
 
-        {/* Center “Coming soon” */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-500 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="absolute inset-0 flex items-center justify-center z-30">
           <h1 className="text-white text-4xl md:text-5xl font-bold">
             COMING SOON......
           </h1>

@@ -3,10 +3,10 @@ import { PlayIcon } from '@/components/Icons';
 export function PlayButton({ onClick }) {
   return (
     <button
-      className="bg-gray-500 text-white font-bold py-2 px-4 cursor-pointer rounded-full hover:bg-gray-700 transition duration-300"
+      className="bg-white py-3 px-5 cursor-pointer rounded-full border border-gray-300"
       onClick={onClick}
     >
-      <PlayIcon className="size-16 fill-white" />
+      <PlayIcon className="size-14 fill-gray-400" />
     </button>
   )
 }
