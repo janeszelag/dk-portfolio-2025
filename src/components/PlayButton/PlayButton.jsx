@@ -1,12 +1,12 @@
-import { PlayIcon } from '@/components/Icons';
+import { PlayIcon } from "@/components/Icons"
 
 export function PlayButton({ onClick }) {
   return (
     <button
-      className="bg-white py-3 px-5 cursor-pointer rounded-full border border-gray-300"
+      className="cursor-pointer"
       onClick={onClick}
     >
-      <PlayIcon className="size-14 fill-gray-400" />
+      <PlayIcon />
     </button>
   )
 }
