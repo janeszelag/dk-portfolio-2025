@@ -1,7 +1,4 @@
 'use client'
-
-import { useEffect, useState } from "react"
-
 import { Nav } from "@/components/Nav"
 import { Reel } from "@/components/Reel"
 import { Contact } from "@/components/Contact"
