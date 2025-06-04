@@ -1,12 +1,15 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
 
 import { FullScreenVimeoDialog } from '@/components/FullScreenVimeoDialog'
 import { PlayButton } from '@/components/PlayButton'
 
-import demoReelStill from '../../../public/images/DK_Demo Reel.webp'
+import demoReelStill from '../../../public/images/reel-thumbnail.webp'
+import demoReelStillMobile from '../../../public/images/reel-thumbnail-mobile.webp'
 
 export function Reel() {
 
@@ -24,16 +27,31 @@ export function Reel() {
       className="relative h-screen w-full overflow-hidden bg-white flex items-center justify-center snap-start snap-always"
     >
 
-    {/* Background Image */}
-      <Image
-        src={demoReelStill}
-        alt="Demo Reel Still"
-        className="object-cover h-screen w-full z-0"
-      />
+      {/* Background Image */}
+      <div className="hidden md:block">
+        <Image
+            src={demoReelStill}
+            alt="Demo Reel Still"
+            className="object-cover"
+            sizes="100vw"
+            fill
+            priority
+          />
+      </div>
+      <div className="block md:hidden">
+        <Image
+            src={demoReelStillMobile}
+            alt="Demo Reel Still"
+            fill
+            sizes="100vw"
+            style={{ objectFit: 'cover' }}
+            priority
+          />
+      </div>
       
       {/* Play Button */}
-      <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <PlayButton onClick={handleDialogOpen} />
+        <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <PlayButton onClick={handleDialogOpen} />
         </div>
         {/* Full Screen Dialog */}
         <FullScreenVimeoDialog vimeoId={1088489771} open={isDialogOpen} onClose={handleDialogClose}/>

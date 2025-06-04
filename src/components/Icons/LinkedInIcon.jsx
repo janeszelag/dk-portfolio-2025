@@ -1,5 +1,5 @@
 export function LinkedInIcon() {
-  const className = "w-8 h-8 text-gray-800 hover:text-pink-400 transition-colors duration-200"
+  const className = "w-8 h-8 text-gray-800 hover:text-pink-300 transition-colors duration-200"
   return (
     <svg className={className} fill="currentColor" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
     viewBox="0 0 512 512">

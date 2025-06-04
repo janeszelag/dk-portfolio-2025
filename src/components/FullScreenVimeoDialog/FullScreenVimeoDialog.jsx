@@ -1,5 +1,6 @@
 import Dialog from '@mui/material/Dialog'
 import { VimeoPlayer } from '@/components/VimeoPlayer'
+import { CloseIcon } from '@/components/Icons'
 import PropTypes from 'prop-types'
 
 
@@ -15,9 +16,9 @@ export function FullScreenVimeoDialog({ vimeoId, open, onClose }) {
       <div className="relative w-full h-full bg-black">
         <button
           onClick={onClose}
-          className="absolute z-50 top-4 text-2xl right-4 cursor-pointer text-pink-600"
+          className="absolute z-50 top-4 text-2xl right-4 group cursor-pointer transition-transform duration-200 hover:scale-120 hover:drop-shadow-md"
         >
-          Close
+          <CloseIcon className="fill-white size-10 md:size-12" />
         </button>
           <VimeoPlayer
             videoId={vimeoId}

@@ -1,72 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-.loader::before,
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  width: 24px;
-  height: 24px;
-  position: absolute;
-  left: 0;
+
+:root {
+  --font-sans: var(--font-poppins);
 }
 
-.loader::before {
-  top: -24px;
-  animation: animloader 4s ease infinite;
-}
-
-.loader::after {
-  top: 0;
-  background: #a7d8ff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  animation: animloader2 2s ease infinite;
-}
-
-@keyframes animloader {
-  0% {
-    box-shadow: 0 24px rgba(167, 216, 255, 0), 24px 24px rgba(167, 216, 255, 0), 24px 48px rgba(167, 216, 255, 0), 0px 48px rgba(167, 216, 255, 0);
-  }
-  12% {
-    box-shadow: 0 24px #a7d8ff, 24px 24px rgba(167, 216, 255, 0), 24px 48px rgba(167, 216, 255, 0), 0px 48px rgba(167, 216, 255, 0);
-  }
-  25% {
-    box-shadow: 0 24px #a7d8ff, 24px 24px #a7d8ff, 24px 48px rgba(167, 216, 255, 0), 0px 48px rgba(167, 216, 255, 0);
-  }
-  37% {
-    box-shadow: 0 24px #a7d8ff, 24px 24px #a7d8ff, 24px 48px #a7d8ff, 0px 48px rgba(167, 216, 255, 0);
-  }
-  50% {
-    box-shadow: 0 24px #a7d8ff, 24px 24px #a7d8ff, 24px 48px #a7d8ff, 0px 48px #a7d8ff;
-  }
-  62% {
-    box-shadow: 0 24px rgba(167, 216, 255, 0), 24px 24px #a7d8ff, 24px 48px #a7d8ff, 0px 48px #a7d8ff;
-  }
-  75% {
-    box-shadow: 0 24px rgba(167, 216, 255, 0), 24px 24px rgba(167, 216, 255, 0), 24px 48px #a7d8ff, 0px 48px #a7d8ff;
-  }
-  87% {
-    box-shadow: 0 24px rgba(167, 216, 255, 0), 24px 24px rgba(167, 216, 255, 0), 24px 48px rgba(167, 216, 255, 0), 0px 48px #a7d8ff;
-  }
-  100% {
-    box-shadow: 0 24px rgba(167, 216, 255, 0), 24px 24px rgba(167, 216, 255, 0), 24px 48px rgba(167, 216, 255, 0), 0px 48px rgba(167, 216, 255, 0);
-  }
-}
-
-@keyframes animloader2 {
-  0% {
-    transform: translate(0, 0) rotateX(0) rotateY(0);
-  }
-  25% {
-    transform: translate(100%, 0) rotateX(0) rotateY(180deg);
-  }
-  50% {
-    transform: translate(100%, 100%) rotateX(-180deg) rotateY(180deg);
-  }
-  75% {
-    transform: translate(0, 100%) rotateX(-180deg) rotateY(360deg);
-  }
-  100% {
-    transform: translate(0, 0) rotateX(0) rotateY(360deg);
-  }
+body {
+  font-family: var(--font-sans), sans-serif;
 }
