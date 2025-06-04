@@ -1,6 +1,11 @@
 import { DotsIcon, CloseIcon } from "@/components/Icons"
 import Dialog from '@mui/material/Dialog'
-import { useState } from 'react'
+import { useState, forwardRef } from 'react'
+import Slide from '@mui/material/Slide';
+
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction="left" ref={ref} {...props} />;
+})
 
 export function Nav() {
   const [open, setIsOpen] = useState(false)
@@ -52,6 +57,9 @@ export function Nav() {
             open={open}
             onClose={handleDialogClose}
             fullScreen
+            slots={{
+              transition: Transition
+            }}
           >
             <div className="relative w-full h-full bg-white">
               <button

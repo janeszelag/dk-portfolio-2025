@@ -1,10 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useState, useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
-
-
+import { useState } from 'react'
 import { FullScreenVimeoDialog } from '@/components/FullScreenVimeoDialog'
 import { PlayButton } from '@/components/PlayButton'
 

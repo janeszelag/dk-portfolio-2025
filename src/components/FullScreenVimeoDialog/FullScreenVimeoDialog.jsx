@@ -2,8 +2,12 @@ import Dialog from '@mui/material/Dialog'
 import { VimeoPlayer } from '@/components/VimeoPlayer'
 import { CloseIcon } from '@/components/Icons'
 import PropTypes from 'prop-types'
+import { forwardRef } from 'react'
+import Slide from '@mui/material/Slide';
 
-
+const Transition = forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+})
 
 export function FullScreenVimeoDialog({ vimeoId, open, onClose }) {
 
@@ -12,6 +16,9 @@ export function FullScreenVimeoDialog({ vimeoId, open, onClose }) {
       open={open}
       onClose={onClose}
       fullScreen
+      slots={{
+        transition: Transition
+      }}
     >
       <div className="relative w-full h-full bg-black">
         <button
