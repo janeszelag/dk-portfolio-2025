@@ -21,7 +21,7 @@ export function Hero() {
           Your browser does not support the video tag.
         </video>
         {/* Down Chevron */}
-        <div onClick={()=> window.location.href = '#reel'} className="cursor-pointer absolute bottom-24 md:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div onClick={()=> window.location.href = '#reel'} className="cursor-pointer absolute bottom-20 md:bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
