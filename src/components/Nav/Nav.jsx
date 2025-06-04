@@ -1,3 +1,5 @@
+import { motion } from "motion/react"
+
 import { DotsIcon, CloseIcon } from "@/components/Icons"
 import Dialog from '@mui/material/Dialog'
 import { useState, forwardRef } from 'react'
@@ -24,9 +26,9 @@ export function Nav() {
       <div className="flex justify-between items-center h-16 md:h-20">
 
         <a href="#hero">
-          <div className="flex flex-col text-[#66bfff] hover:text-pink-300 cursor-pointer">
+          <div className="flex flex-col group text-[#66bfff] hover:text-pink-300 cursor-pointer group-hover:text-pink-300">
             <span className="text-xl md:text-3xl font-extrabold">DAKOTA ARSENEAULT</span>
-            <span className="text-[13px] md:text-[19.5px] font-bold">VIDEO EDITOR | MOTION DESIGNER</span>
+            <SplitText text="VIDEO EDITOR | MOTION DESIGNER" className="text-[13px] md:text-[19.5px] font-bold text-[#66bfff] group-hover:text-pink-300 cursor-pointer" />
           </div>
         </a>
 
@@ -109,3 +111,37 @@ const NavLink = ({ href, children, ...rest }) => {
       {children}
     </a>
   )}
+  
+function SplitText({ text, className }) {
+  const letters = text.split("")
+
+  return (
+    <motion.span
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.03,
+          },
+        },
+      }}
+      className="inline-block"
+    >
+      {letters.map((char, i) => (
+        <motion.span
+          key={i}
+          variants={{
+            hidden: { opacity: 0, filter: "blur(4px)" },
+            visible: { opacity: 1, filter: "blur(0px)" }
+          }}
+          transition={{ duration: 0.3 }}
+          className={`inline-block ${className}`}
+        >
+          {char === " " ? "\u00A0" : char}
+        </motion.span>
+      ))}
+    </motion.span>
+  )
+}
+  
