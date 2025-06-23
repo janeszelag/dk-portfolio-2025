@@ -1,4 +1,4 @@
-import { motion } from "motion/react"
+import { motion } from "framer-motion"
 
 import { DotsIcon, CloseIcon } from "@/components/Icons"
 import Dialog from '@mui/material/Dialog'
