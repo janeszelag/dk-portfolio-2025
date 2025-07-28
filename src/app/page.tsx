@@ -3,7 +3,7 @@ import { Nav } from "@/components/Nav"
 import { Reel } from "@/components/Reel"
 import { Contact } from "@/components/Contact"
 import { Hero } from "@/components/Hero"
-// import { About } from "@/components/About"
+import { Work } from "@/components/Work"
 
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
       <Nav />
       <Hero />
       <Reel />
-      {/* <About /> */}
+      <Work />
       <Contact />
     </main>
   )

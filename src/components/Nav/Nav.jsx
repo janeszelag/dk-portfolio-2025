@@ -38,11 +38,11 @@ export function Nav() {
             <NavLink href="#reel">
               REEL
             </NavLink>
-            {/* 
-            <NavLink href="#about">
-              ABOUT
+            
+            <NavLink href="#work">
+              WORK
             </NavLink>
-             */}
+            
             <NavLink href="#contact">
               CONTACT
             </NavLink>
@@ -76,11 +76,11 @@ export function Nav() {
                   REEL
                 </MobileNavLink>
                 <Hairline />
-                {/*
-                <MobileNavLink href="#about">
-                  ABOUT
+                
+                <MobileNavLink href="#work">
+                  WORK
                 </MobileNavLink>
-                 */}
+                
                 <MobileNavLink href="#contact">
                   CONTACT
                 </MobileNavLink>
