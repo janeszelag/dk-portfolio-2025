@@ -6,7 +6,7 @@ export function VimeoPlayer({ videoId, autoplay = true }) {
   return (
     <div className="w-full">
       <iframe
-        src={`https://player.vimeo.com/video/${videoId}?${autoplayParam}&autopause=0&quality=1080p&title=0&byline=0&portrait=0`}
+        src={`https://player.vimeo.com/video/${videoId}?${autoplayParam}&autopause=0&quality=4K&title=0&byline=0&portrait=0`}
         className="absolute py-10 left-0 w-full h-full border-0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
         allowFullScreen
