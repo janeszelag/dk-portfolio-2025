@@ -18,6 +18,27 @@ export const metadata: Metadata = {
     shortcut: "/images/d-icon.webp",
     apple: "/images/d-icon.webp",
   },
+  openGraph: {
+    title: "Dakota Arseneault Portfolio",
+    description: "Website for Dakota Arseneault, a video editor and motion designer.",
+    url: "https://www.dakotaarseneault.com",
+    siteName: "Dakota Arseneault",
+    images: [
+      {
+        url: "https://www.dakotaarseneault.com/images/open-graph.png",
+        width: 1200,
+        height: 630,
+        alt: "Dakota Arseneault Portfolio Preview",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Dakota Arseneault Portfolio",
+    description: "Website for Dakota Arseneault, a video editor and motion designer.",
+    images: ["https://www.dakotaarseneault.com/images/open-graph.png"],
+  }
 }
 
 export default function RootLayout({
