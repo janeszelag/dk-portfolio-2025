@@ -13,6 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Dakota Arseneault Portfolio",
   description: "Website for Dakota Arseneault, a video editor and motion designer.",
+  metadataBase: new URL("https://www.dakotaarseneault.com"),
   icons: {
     icon: "/images/d-icon.webp",
     shortcut: "/images/d-icon.webp",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.dakotaarseneault.com/images/opengraph-image.jpg",
+        url: "/images/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Dakota Arseneault Portfolio Preview",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dakota Arseneault Portfolio",
     description: "Website for Dakota Arseneault, a video editor and motion designer.",
-    images: ["https://www.dakotaarseneault.com/images/opengraph-image.jpg"],
+    images: ["/images/opengraph-image.jpg"],
   },
 }
 
