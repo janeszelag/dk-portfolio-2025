@@ -28,7 +28,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <head>
+        
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        
+        <meta property="og:url" content="https://www.dakotaarseneault.com/"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Dakota Arseneault Portfolio"/>
+        <meta property="og:description" content="Website for Dakota Arseneault, a video editor and motion designer."></meta>
+        <meta property="og:image" content="https://www.dakotaarseneault.com/images/opengraph-image.jpg"/>
+
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="twitter:domain" content="dakotaarseneault.com"/>
+        <meta property="twitter:url" content="https://www.dakotaarseneault.com/"/>
+        <meta name="twitter:title" content="Dakota Arseneault Portfolio"/>
+        <meta name="twitter:description" content="Website for Dakota Arseneault, a video editor and motion designer."/>
+        <meta name="twitter:image" content="https://www.dakotaarseneault.com/images/opengraph-image.jpg"/>
+
       </head>
       <body>
         {children}
