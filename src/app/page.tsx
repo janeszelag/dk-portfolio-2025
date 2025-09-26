@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <main
-      className="h-screen overflow-y-scroll snap-y scroll-smooth snap-mandatory relative"
+      className="relative flex flex-col"
     >
       <Nav />
       <Hero />

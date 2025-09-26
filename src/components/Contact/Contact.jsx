@@ -2,8 +2,8 @@ import { VimeoIcon, LinkedInIcon } from "@/components/Icons"
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-white h-screen snap-start">
-      <div className="flex flex-col items-center justify-center h-full gap-2">
+    <section id="contact" className="bg-white min-h-dvh">
+      <div className="flex flex-col items-center justify-center min-h-dvh gap-2 py-24">
         <h2 className="text-2xl md:text-3xl font-semibold">Contact</h2>
         <a href="mailto:dkneault@gmail.com" className="hover:underline hover:text-pink-300" alt="Email Dakota Arseneault">
           <p>dkneault@gmail.com</p>

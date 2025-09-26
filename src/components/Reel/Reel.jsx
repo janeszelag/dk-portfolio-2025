@@ -21,7 +21,7 @@ export function Reel() {
   return (
     <section
       id="reel"
-      className="relative h-screen w-full overflow-hidden bg-white flex items-center justify-center snap-start snap-always"
+      className="relative min-h-dvh w-full overflow-hidden bg-white flex items-center justify-center snap-start snap-always"
     >
 
       {/* Background Image */}

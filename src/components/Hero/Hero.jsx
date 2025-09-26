@@ -1,9 +1,9 @@
 export function Hero() {
   return (
 
-      <section id="hero" className="h-screen snap-start relative">
+      <section id="hero" className="relative min-h-dvh">
         <video
-          className="w-full h-full object-cover"
+          className="object-cover min-h-dvh"
           autoPlay
           loop
           muted
